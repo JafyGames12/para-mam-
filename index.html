@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Para mi mamá ❤️</title>
+
+    <style>
+
+        body{
+            margin:0;
+            background:linear-gradient(#ffb6d9,#ffffff);
+            font-family:Arial, sans-serif;
+            text-align:center;
+        }
+
+        img{
+            width:320px;
+            margin-top:30px;
+            border-radius:25px;
+            box-shadow:0 0 20px gray;
+        }
+
+        h1{
+            color:#d6006f;
+            font-size:55px;
+            margin-top:25px;
+        }
+
+        .tarjeta{
+            background:white;
+            width:700px;
+            max-width:85%;
+            margin:30px auto;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 0 20px gray;
+        }
+
+        h2{
+            color:#d6006f;
+            font-size:34px;
+        }
+
+        p{
+            font-size:26px;
+            line-height:1.6;
+        }
+
+        button{
+            background:#ff4d94;
+            color:white;
+            border:none;
+            padding:18px 35px;
+            font-size:22px;
+            border-radius:15px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#d6006f;
+            transform:scale(1.08);
+        }
+
+        #mensaje{
+            margin-top:30px;
+            font-size:34px;
+            color:#d6006f;
+            font-weight:bold;
+        }
+
+        .corazon{
+            position:fixed;
+            top:-50px;
+            font-size:30px;
+            animation:caer 4s linear forwards;
+        }
+
+        @keyframes caer{
+
+            from{
+                transform:translateY(0) rotate(0deg);
+                opacity:1;
+            }
+
+            to{
+                transform:translateY(110vh) rotate(360deg);
+                opacity:0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <img src="mama.jpg" alt="Mi mamá">
+
+    <h1>❤️ Mi mamá es la mejor del mundo ❤️</h1>
+
+    <div class="tarjeta">
+
+        <h2>🌷 Para la mejor mamá 🌷</h2>
+
+        <p>
+            Gracias por cuidarme, abrazarme y enseñarme todos los días.
+        </p>
+
+        <p>
+            Tu amor hace que cada día sea más lindo.
+            ¡Te quiero con todo mi corazón! ❤️
+        </p>
+
+        <button onclick="mostrarMensaje()">
+            ❤️ Haz clic aquí ❤️
+        </button>
+
+        <div id="mensaje"></div>
+
+    </div>
+
+<script>
+
+function mostrarMensaje(){
+
+    document.getElementById("mensaje").innerHTML=
+    "❤️ ¡Te amo muchísimo, mamá! ❤️<br><br>🌹 Gracias por estar siempre conmigo 🌹";
+
+    for(let i=0;i<30;i++){
+
+        let corazon=document.createElement("div");
+
+        corazon.className="corazon";
+        corazon.innerHTML="❤️";
+
+        corazon.style.left=Math.random()*100+"vw";
+
+        corazon.style.animationDuration=(2+Math.random()*3)+"s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(function(){
+            corazon.remove();
+        },5000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
